@@ -7,14 +7,21 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
+import org.apache.log4j.Logger;
+
 import com.project.Model.*;
 import com.project.Service.*;
 
 public class ClientApp {
 
-	
+	private static final Logger logger;
+
+    static {
+        logger = Logger.getLogger(ClientApp.class);
+    }
 
 	public static void main(String[] args) {	
+		logger.info("Application Started");
 		int choice = -1 , product_id;
 		Product product;
 		UserRegistration service = new UserRegistrationImpl();
@@ -480,7 +487,7 @@ public class ClientApp {
 					break;	
 			}
 		}while(choice != -1);
-
+		logger.info("Application Ended");
 	}
 
 }

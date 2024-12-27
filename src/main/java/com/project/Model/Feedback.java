@@ -1,10 +1,30 @@
 package com.project.Model;
 
-import lombok.Data;
+
 
 public class Feedback {
     private String customerName;
-    private String customerCity;
+    public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public void setCustomerCity(String customerCity) {
+		this.customerCity = customerCity;
+	}
+
+	public void setFeedbackMessage(String feedbackMessage) {
+		this.feedbackMessage = feedbackMessage;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
+	public void setAverageRating(double averageRating) {
+		this.averageRating = averageRating;
+	}
+
+	private String customerCity;
     private String feedbackMessage;
     private int rating;
     private double averageRating; // To store the average rating for the product
