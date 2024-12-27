@@ -3,9 +3,13 @@ package com.project.Service;
 
 
 import java.sql.ResultSet;
+import java.util.List;
+import java.util.Map;
 
 import com.project.Model.Customer;
-
+import com.project.Model.Product;
+import com.project.Model.ProductFeedback;
+import com.project.Model.Services;
 import com.project.Repository.*;
 
 public class UserRegistrationImpl implements UserRegistration {
@@ -25,9 +29,32 @@ public class UserRegistrationImpl implements UserRegistration {
 	}
 
 	@Override
-	public ResultSet generateReport() {
+	public boolean addProductFeedback(Customer cust, Product product) {
 		// TODO Auto-generated method stub
-		return null;
+		return repo.addProductFeedback(cust, product);
+	}
+	
+	@Override
+	public boolean addFeedback(Services service) {
+		// TODO Auto-generated method stub
+		return  repo.addFeedback(service);
 	}
 
+	@Override
+	public List<Services> viewAllServices() {
+		// TODO Auto-generated method stub
+		return repo.viewAllServices();
+	}
+
+	@Override
+	public boolean isValidService(int id) {
+		// TODO Auto-generated method stub
+		return repo.isValidService(id);
+	}
+
+	@Override
+	public boolean isValidProduct(int id) {
+		// TODO Auto-generated method stub
+		return repo.isValidProduct(id);
+	}
 }
